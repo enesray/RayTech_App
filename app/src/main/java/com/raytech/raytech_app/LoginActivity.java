@@ -13,5 +13,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
+        Button loginButton = findViewById(R.id.userLoginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
+
+    }
+
+    public void openDialog() {
+        DialogAlerts dialogAlerts = new DialogAlerts();
+        dialogAlerts.show(getSupportFragmentManager(),"bakım");
     }
 }
