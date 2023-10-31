@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "789572305098",
+    "project_id": "raytech-enes",
+    "storage_bucket": "raytech-enes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789572305098:android:6c2dc8d521c3f4ff44f433",
+        "android_client_info": {
+          "package_name": "com.raytech.raytech_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6plj-hqqlgqwyb6TDhKQvu6gUgAmY4sU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
