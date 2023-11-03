@@ -3,4 +3,6 @@
     <string name="alert_title">Uyarı</string>
     <string name="maintenance_message">Henüz Bakım Aşamasındayız</string>
     <string name="ok_button">Tamam</string>
+    <string name="login_user_and_password_warning">Lütfen kullanıcı adı ve şifre giriniz.</string>
+    <string name="login_password_lenght_warning">Şifreniz 6 karakter altında olamaz.Tekrar Deneyiniz</string>
 </resources>
