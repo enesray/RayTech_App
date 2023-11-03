@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginManager {
     private FirebaseAuth mAuth;
@@ -37,12 +38,17 @@ public class LoginManager {
                     }
                 });
     }
+    public void signInExistingUser(Activity activity,Class<?> targetClass){
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null){
+            Intent intent = new Intent(activity, targetClass);
+            activity.startActivity(intent);
+            activity.finish();
+        }
+    }
 
     public void signOut(){
         mAuth.signOut();
-    }
-    public void userInfo(TextView textView){
-      textView.setText(mAuth.getCurrentUser().getEmail());
     }
 
 }

@@ -27,6 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         events();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loginManager.signInExistingUser(LoginActivity.this,MainActivity.class);
+    }
+
     private void init() {
         userName = findViewById(R.id.userName);
         userPassword = findViewById(R.id.userPassword);
