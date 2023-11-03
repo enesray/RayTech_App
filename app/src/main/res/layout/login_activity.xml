@@ -7,7 +7,7 @@
     android:background="#242424"
     android:orientation="vertical"
     android:weightSum="7"
-    tools:context=".LoginActivity">
+    tools:context=".login.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,8 +56,8 @@
                 android:layout_marginRight="40dp"
                 android:background="@drawable/edit_txt_design_1"
                 android:fontFamily="@font/roboto_light"
-                android:hint="Kullanıcı Adı"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
+                android:hint="E-Posta"
                 android:paddingLeft="20dp"
                 android:textColorHint="#DADADA" />
         </LinearLayout>
@@ -92,12 +92,13 @@
                 android:id="@+id/userLoginButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_design_1"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Giriş Yap"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
+                android:background="@drawable/button_design_1"
+                android:fontFamily="@font/roboto_medium"
+                android:onClick="userLoginButton"
                 android:paddingLeft="20dp"
+                android:text="Giriş Yap"
                 android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textColorHint="@color/black"
@@ -109,6 +110,7 @@
 
 
     <LinearLayout
+        android:id="@+id/registerLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.9"
