@@ -4,5 +4,27 @@
     <string name="maintenance_message">Henüz Bakım Aşamasındayız</string>
     <string name="ok_button">Tamam</string>
     <string name="login_user_and_password_warning">Lütfen kullanıcı adı ve şifre giriniz.</string>
-    <string name="login_password_lenght_warning">Şifreniz 6 karakter altında olamaz.Tekrar Deneyiniz</string>
+    <string name="password_lenght_warning">Şifreniz 6 karakter altında olamaz.Tekrar Deneyiniz</string>
+    <string name="login_success_dialog_title">Başarılı</string>
+    <string name="login_success_dialog_description">Giriş Başarılı..</string>
+    <string name="login_success_dialog_button_text">Tamam</string>
+    <string name="userRegisterButton">Kayıt Ol</string>
+    <string name="password">Şifre</string>
+    <string name="userPhoneNumber">Telefon Numarası</string>
+    <string name="userName">Ad Soyad</string>
+    <string name="email">E-Posta</string>
+    <string name="userLogin">Giriş Yap</string>
+    <string name="do_not_have_an_account">Hesabınız yok mu?</string>
+    <string name="sign_up_now">Şimdi Kaydolun!</string>
+
+    <!---! Register Warning -->
+    <string name="register_invalid_email_warning">Geçersiz E-Posta</string>
+    <string name="register_phone_number_length_warning">Telefon Numaranız 10 Karakterin Altında</string>
+    <string name="register_username_length_warning">Adınız 3 Karakterin Altında</string>
+    <string name="register_phone_number_digits_warning">Telefon Numaranız Sadece Rakamlardan Oluşmalıdır</string>
+    <string name="register_username_special_characters_warning">Adınızda Özel Karakterler Bulunmamalıdır</string>
+    <string name="register_username_password_match_warning">Adınız Şifre İle Aynı Olamaz</string>
+    <string name="register_all_fields_warning">Lütfen Tüm Alanları Doldurunuz</string>
+
+    <string name="register_success_dialog_description">Kayıt Başarılı..</string>
 </resources>

@@ -38,10 +38,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:orientation="vertical"
-        android:weightSum="3">
+        android:weightSum="4">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
 
+            <EditText
+                android:id="@+id/userNameAndSurname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/edit_txt_design_1"
+                android:fontFamily="@font/roboto_light"
+                android:inputType="textPersonName"
+                android:hint="@string/userName"
+                android:paddingLeft="20dp"
+                android:textColorHint="#DADADA" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/userPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/edit_txt_design_1"
+                android:fontFamily="@font/roboto_light"
+                android:inputType="text"
+                android:hint="@string/userPhoneNumber"
+                android:paddingLeft="20dp"
+                android:textColorHint="#DADADA" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -82,60 +119,31 @@
                 android:textColorHint="#DADADA" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/userLoginButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:background="@drawable/button_design_1"
-                android:fontFamily="@font/roboto_medium"
-                android:onClick="userLoginButton"
-                android:paddingLeft="20dp"
-                android:text="@string/userLogin"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textColorHint="@color/black"
-                android:textSize="23sp"
-                app:backgroundTint="@null" />
-
-        </LinearLayout>
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/registerLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.9"
+        android:layout_weight="1"
+        android:gravity="center">
 
-        android:gravity="center|bottom">
-
-        <TextView
+        <Button
+            android:id="@+id/userRegisterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/roboto_light"
-            android:text="@string/do_not_have_an_account"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/roboto_light"
-            android:text="@string/sign_up_now"
-            android:textColor="#FFFFFF"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button_design_1"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="userRegisterButton"
+            android:paddingLeft="20dp"
+            android:text="@string/userRegisterButton"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textSize="23sp"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 </LinearLayout>

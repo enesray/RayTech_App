@@ -1,5 +1,8 @@
 package com.raytech.raytech_app.util;
 
+import android.app.Activity;
+import android.content.Intent;
+
 public class Utils {
     public static boolean IsNullOrEmpty(String value) {
         boolean result = false;
@@ -14,4 +17,11 @@ public class Utils {
 
         return result;
     }
+    public static void ChangeActivity(Activity activity, Class<?> targetClass) {
+        Intent intent = new Intent(activity, targetClass);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+
 }
