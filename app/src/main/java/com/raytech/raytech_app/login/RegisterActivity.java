@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         registerUserModel = new RegisterUserModel(userNameAndSurNameTxt,userPhoneNumberTxt,userEmailTxt, userPasswordTxt);
         if (RegisterUserInputValidator(registerUserModel, context)) {
-            loginManager.sigUp(registerUserModel, RegisterActivity.this, MainActivity.class);
+            loginManager.signUp(registerUserModel, RegisterActivity.this, MainActivity.class);
         }
     }
 

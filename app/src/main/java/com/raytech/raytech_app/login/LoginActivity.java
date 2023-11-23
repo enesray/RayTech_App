@@ -1,19 +1,19 @@
 package com.raytech.raytech_app.login;
 
 import static com.raytech.raytech_app.util.LoginUtils.LoginUserInputValidator;
+import static com.raytech.raytech_app.util.Utils.ChangeActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.raytech.raytech_app.DialogAlerts;
 import com.raytech.raytech_app.MainActivity;
 import com.raytech.raytech_app.R;
 
 public class LoginActivity extends AppCompatActivity {
     String userEmailTxt, userPasswordTxt;
-    TextView userName, userPassword;
+    TextView userEmail, userPassword;
     LinearLayout registerLayout;
     LoginUserModel loginUserModel;
     LoginManager loginManager;
@@ -30,11 +30,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        loginManager.signInExistingUser(LoginActivity.this,MainActivity.class);
+        loginManager.signInExistingUser(LoginActivity.this, MainActivity.class);
     }
 
     private void init() {
-        userName = findViewById(R.id.userName);
+        userEmail = findViewById(R.id.userEmail);
         userPassword = findViewById(R.id.userPassword);
         registerLayout = findViewById(R.id.registerLayout);
         loginManager = new LoginManager(context);
@@ -45,13 +45,13 @@ public class LoginActivity extends AppCompatActivity {
         registerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialog();
+                ChangeActivity(LoginActivity.this, RegisterActivity.class);
             }
         });
     }
 
     public void userLoginButton(View view) {
-        userEmailTxt = userName.getText().toString();
+        userEmailTxt = userEmail.getText().toString();
         userPasswordTxt = userPassword.getText().toString();
 
         loginUserModel = new LoginUserModel(userEmailTxt, userPasswordTxt);
@@ -59,9 +59,5 @@ public class LoginActivity extends AppCompatActivity {
             loginManager.sigIn(loginUserModel, LoginActivity.this, MainActivity.class);
         }
     }
-
-    public void openDialog() {
-        DialogAlerts dialogAlerts = new DialogAlerts();
-        dialogAlerts.show(getSupportFragmentManager(), "Kayıt Ekranı Çok Yakında!");
-    }
 }
+
