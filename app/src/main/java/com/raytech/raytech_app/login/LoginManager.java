@@ -1,9 +1,11 @@
 package com.raytech.raytech_app.login;
 
+import static com.raytech.raytech_app.util.DialogUtils.showPopupDialogError;
+import static com.raytech.raytech_app.util.DialogUtils.showPopupDialogSuccess;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -13,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.raytech.raytech_app.R;
 
 import java.util.HashMap;
 
@@ -35,15 +38,13 @@ public class LoginManager {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Intent intent = new Intent(activity, targetClass);
-                        activity.startActivity(intent);
-                        activity.finish();
+                        showPopupDialogSuccess(activity, R.string.login_success_dialog_description, activity, targetClass);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception error) {
-                        Log.e("Error", "Login Fail", error);
+                        showPopupDialogError(activity, R.string.onfailure__dialog_description);
                     }
                 });
     }
@@ -63,16 +64,14 @@ public class LoginManager {
                         mData.put("userUid", mUser.getUid());
                         mRefence.child("users").child(mUser.getUid()).setValue(mData);
 
-                        Intent intent = new Intent(activity, targetClass);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        activity.startActivity(intent);
-                        activity.finish();
+                        showPopupDialogSuccess(activity, R.string.register_success_dialog_description, activity, targetClass);
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception error) {
-                        Log.e("Error", "Register Fail", error);
+                        showPopupDialogError(activity, R.string.onfailure__dialog_description);
                     }
                 });
     }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RayTech</string>
     <string name="alert_title">Uyarı</string>
+    <string name="error_title">Hata</string>
     <string name="maintenance_message">Henüz Bakım Aşamasındayız</string>
     <string name="ok_button">Tamam</string>
     <string name="login_user_and_password_warning">Lütfen kullanıcı adı ve şifre giriniz.</string>
@@ -26,5 +27,7 @@
     <string name="register_username_password_match_warning">Adınız Şifre İle Aynı Olamaz</string>
     <string name="register_all_fields_warning">Lütfen Tüm Alanları Doldurunuz</string>
 
-    <string name="register_success_dialog_description">Kayıt Başarılı..</string>
+    <string name="register_success_dialog_description">Kayıt Başarılı</string>
+    <string name="success_title">Başarılı</string>
+    <string name="onfailure__dialog_description">Hata Oluştu. \nLütfen Bilgilerinizi Kontrol Edip Tekrar Deneyiniz.</string>
 </resources>

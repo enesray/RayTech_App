@@ -1,5 +1,8 @@
 package com.raytech.raytech_app.util;
 
+import static com.raytech.raytech_app.util.Utils.ChangeActivity;
+
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 
@@ -25,4 +28,38 @@ public class DialogUtils {
                     }
                 });
     }
+    public static void showPopupDialogSuccess(Context context, int messageResId, Activity activity, Class<?> targetClass) {
+        String message = context.getResources().getString(messageResId);
+
+        PopupDialog.getInstance(context)
+                .setStyle(Styles.SUCCESS)
+                .setHeading(context.getResources().getString(R.string.success_title))
+                .setDescription(message)
+                .setCancelable(false)
+                .setDismissButtonText(context.getResources().getString(R.string.ok_button))
+                .showDialog(new OnDialogButtonClickListener() {
+                    @Override
+                    public void onDismissClicked(Dialog dialog) {
+                        ChangeActivity(activity, targetClass);
+                        dialog.dismiss();
+                    }
+                });
+    }
+    public static void showPopupDialogError(Context context, int messageResId) {
+        String message = context.getResources().getString(messageResId);
+
+        PopupDialog.getInstance(context)
+                .setStyle(Styles.FAILED)
+                .setHeading(context.getResources().getString(R.string.error_title))
+                .setDescription(message)
+                .setCancelable(false)
+                .setDismissButtonText(context.getResources().getString(R.string.ok_button))
+                .showDialog(new OnDialogButtonClickListener() {
+                    @Override
+                    public void onDismissClicked(Dialog dialog) {
+                        super.onDismissClicked(dialog);
+                    }
+                });
+    }
+
 }

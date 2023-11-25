@@ -47,7 +47,7 @@ public class LoginUtils {
         }
 
         // 4. Kontrol: Telefon numarası uzunluğu kontrolü
-        if (registerUserModel.getUserPhoneNumber().length() <= 10) {
+        if (registerUserModel.getUserPhoneNumber().length() < 10) {
             DialogUtils.showPopupDialogWarning(context, R.string.register_phone_number_length_warning);
             return false;
         }
@@ -65,7 +65,7 @@ public class LoginUtils {
         }
 
         // 7. Kontrol: Kullanıcı adı ve soyadı içinde özel karakter kontrolü
-        if (!isAlphaNumeric(registerUserModel.getUserNameAndSurName())) {
+        if (isAlphaNumeric(registerUserModel.getUserNameAndSurName())) {
             DialogUtils.showPopupDialogWarning(context, R.string.register_username_special_characters_warning);
             return false;
         }
@@ -86,19 +86,4 @@ public class LoginUtils {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-
-    public static void LoginSuccessDialog(Context context) {
-        PopupDialog.getInstance(context)
-                .setStyle(Styles.SUCCESS)
-                .setHeading(context.getResources().getString(R.string.login_success_dialog_title))
-                .setDescription(context.getResources().getString(R.string.login_success_dialog_description))
-                .setCancelable(false)
-                .setTimeout(3)
-                .showDialog(new OnDialogButtonClickListener() {
-                    @Override
-                    public void onPositiveClicked(Dialog dialog) {
-                        super.onPositiveClicked(dialog);
-                    }
-                });
-    }
 }

@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void userRegisterButton(View view) {
         userNameAndSurNameTxt = userNameAndSurName.getText().toString();
-        userPhoneNumberTxt = userPassword.getText().toString();
+        userPhoneNumberTxt = userPhoneNumber.getText().toString();
         userEmailTxt = userEmail.getText().toString();
         userPasswordTxt = userPassword.getText().toString();
 
