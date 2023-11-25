@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -16,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.raytech.raytech_app.R;
+import com.raytech.raytech_app.util.Utils;
 
 import java.util.HashMap;
 
@@ -57,6 +59,10 @@ public class LoginManager {
                         mUser = mAuth.getCurrentUser();
                         mData = new HashMap<>();
 
+                        if (Utils.IsNullOrEmpty(registerUserModel.getUserNameAndSurName()) || Utils.IsNullOrEmpty(registerUserModel.getUserPhoneNumber()) || Utils.IsNullOrEmpty(registerUserModel.getUserEmail()) || Utils.IsNullOrEmpty(registerUserModel.getUserPassword())) {
+                            showPopupDialogError(activity, R.string.onfailure__dialog_description);
+                            return;
+                        }
                         mData.put("userNameAndSurName", registerUserModel.getUserNameAndSurName());
                         mData.put("userPhoneNumber", registerUserModel.getUserPhoneNumber());
                         mData.put("userEmail", registerUserModel.getUserEmail());
