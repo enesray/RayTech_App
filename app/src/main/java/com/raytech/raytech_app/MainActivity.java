@@ -9,7 +9,7 @@ import com.raytech.raytech_app.fragments.HomeFragment;
 import com.raytech.raytech_app.fragments.AIFragment;
 import com.raytech.raytech_app.fragments.IzmirFragment;
 import com.raytech.raytech_app.fragments.ProfileFragment;
-import com.raytech.raytech_app.fragments.SettingFragment;
+import com.raytech.raytech_app.fragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
     private int selectedItemId = 1; // Default selected item ID is 1 (home)
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     getSupportFragmentManager().beginTransaction()
                             .setReorderingAllowed(true)
-                            .replace(R.id.fragment_container_id, SettingFragment.class, null)
+                            .replace(R.id.fragment_container_id, SettingsFragment.class, null)
                             .commit();
                     break;
                 case 2:
@@ -74,17 +74,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        if (selectedItemId == 3) {
-            // If the current selected item is home, perform the default back button action
-            super.onBackPressed();
-            this.finish();
-        } else {
-            // If the current selected item is not home, set the home item as selected
-            MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigation);
-            bottomNavigation.show(3, true);
-            selectedItemId = 3;
-        }
-    }
 }

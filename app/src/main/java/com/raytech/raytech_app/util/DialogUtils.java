@@ -28,6 +28,7 @@ public class DialogUtils {
                     }
                 });
     }
+
     public static void showPopupDialogSuccess(Context context, int messageResId, Activity activity, Class<?> targetClass) {
         String message = context.getResources().getString(messageResId);
 
@@ -45,6 +46,7 @@ public class DialogUtils {
                     }
                 });
     }
+
     public static void showPopupDialogError(Context context, int messageResId) {
         String message = context.getResources().getString(messageResId);
 
@@ -58,6 +60,33 @@ public class DialogUtils {
                     @Override
                     public void onDismissClicked(Dialog dialog) {
                         super.onDismissClicked(dialog);
+                    }
+                });
+    }
+
+    public static void showPopupDialogYesOrNo(Context context, int messageResId) {
+        String message = context.getResources().getString(messageResId);
+
+        PopupDialog.getInstance(context)
+                .setStyle(Styles.STANDARD)
+                .setHeading(context.getResources().getString(R.string.exit_title))
+                .setDescription(message)
+                .setCancelable(false)
+                .setDismissButtonText(context.getResources().getString(R.string.ok_button))
+                .setPositiveButtonText(context.getResources().getString(R.string.yes))
+                .setNegativeButtonText(context.getResources().getString(R.string.no))
+                .setPopupDialogIcon(R.drawable.exit)
+
+                .showDialog(new OnDialogButtonClickListener() {
+                    @Override
+                    public void onPositiveClicked(Dialog dialog) {
+
+                        super.onPositiveClicked(dialog);
+                    }
+
+                    @Override
+                    public void onNegativeClicked(Dialog dialog) {
+                        super.onNegativeClicked(dialog);
                     }
                 });
     }

@@ -9,15 +9,17 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_id"
         android:layout_width="match_parent"
+        android:layout_above="@+id/bottomNavigation"
         android:layout_height="match_parent"/>
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primary"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        app:mbn_backgroundBottomColor="#ffffff"
+        app:mbn_backgroundBottomColor="@color/primary"
         app:mbn_circleColor="#ffffff"
         app:mbn_countBackgroundColor="#670862"
         app:mbn_countTextColor="#ffffff"

@@ -2,6 +2,7 @@ package com.raytech.raytech_app.login;
 
 import static com.raytech.raytech_app.util.DialogUtils.showPopupDialogError;
 import static com.raytech.raytech_app.util.DialogUtils.showPopupDialogSuccess;
+import static com.raytech.raytech_app.util.Utils.ChangeActivity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -40,7 +41,7 @@ public class LoginManager {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        showPopupDialogSuccess(activity, R.string.login_success_dialog_description, activity, targetClass);
+                        ChangeActivity(activity, targetClass);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

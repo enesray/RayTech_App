@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">RayTech</string>
     <string name="alert_title">Uyarı</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="exit_description">Çıkış yapılacak. Emin misiniz?</string>
+    <string name="exit_title">Çıkış</string>
     <string name="error_title">Hata</string>
     <string name="maintenance_message">Henüz Bakım Aşamasındayız</string>
     <string name="ok_button">Tamam</string>
